@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I'm Alive! What a Milestone!
-date: 2015-05-15 21:01:00
+date: 2017-03-01 17:19:00
 description: The essential takeaway from "The How To Get Hired with a Non-Traditional Background" webinar culminated to this.
 published: true
 ---
