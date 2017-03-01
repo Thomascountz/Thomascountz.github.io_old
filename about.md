@@ -7,23 +7,25 @@ permalink: /about/
 <img class="col one right" src="/img/prof_pic.jpg">
 
 <br/>
-Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com" target="blank">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture "prof_pic.jpg" and put it in the img folder. 
+I am a professional actor, baker, and coffee snob now turned self-taught web developer living in NYC.
 
-Link to your social media connections, too. This theme is set up to use <a href="http://fortawesome.github.io/Font-Awesome/" target="blank">Font Awesome icons</a>, like the ones below. Add your facebook, twitter, linkedin, or just disable all of them. 
+I fell in love with web development not only for its rewarding technical challanges, but for its community. I began studying with a bit of a chip on my shoulder, but already I've been met with such warmth, passion, collaboration, and creativity from my peers and mentors.
 
+By my own admission, I don't like to call myself a web developer quite yet; however, as I grow, refocus, design, scrap, build, and discover all the brilliance in this field, I take time to pause.
+
+I am inspired by knowledge, spurred by an impetus for expression, and channeled by technical precision. I aim to build meaningful experiences through clean elegant code. Though I haven’t been a developer for long, I’m on a humble flight.
 
 <br/>
 <hr/>
 <br/>
 <span class="contacticon center">
-	<a href="mailto:you@example.com"><i class="fa fa-envelope-square"></i></a>
-	<a href="https://github.com" target="_blank"><i class="fa fa-github-square"></i></a>
-	<a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-	<a href="http://tumblr.com" target="_blank"><i class="fa fa-tumblr-square"></i></a>
-	<a href="https://twitter.com" target="_blank"><i class="fa fa-twitter-square"></i></a>
+	<a href="mailto:thomascountz@gmail.com"><i class="fa fa-envelope-square"></i></a>
+	<a href="https://github.com/thomascountz" target="_blank"><i class="fa fa-github-square"></i></a>
+	<a href="https://www.linkedin.com/in/thomas-countz-8b0951135/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+	<a href="https://twitter.com/thomascountz" target="_blank"><i class="fa fa-twitter-square"></i></a>
 </span>
 
 <div class="col three caption">
-	You can even add a little note about which of these is the best way to reach you.
+	Or just email: thomascountz@gmail.com
 </div>
 
