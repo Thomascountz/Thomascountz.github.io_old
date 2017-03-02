@@ -11,9 +11,9 @@ I am a professional actor, baker, and coffee snob now turned self-taught web dev
 
 I fell in love with web development not only for its rewarding technical challanges, but for its community. I began studying with a bit of a chip on my shoulder, but already I've been met with such warmth, passion, collaboration, and creativity from my peers and mentors.
 
-By my own admission, I don't like to call myself a web developer quite yet; however, as I grow, refocus, design, scrap, build, and discover all the brilliance in this field, I take time to pause.
+As I grow, refocus, design, scrap, build, and discover all the brilliance in this field, I take time to pause. I am inspired by knowledge, spurred by an impetus for expression, and channeled by technical precision. I aim to build meaningful experiences through clean elegant code, collaborate with peers and co-creators to express new ideas, and to enrich and maintain products and serives that solve problems with dependable solutions. 
 
-I am inspired by knowledge, spurred by an impetus for expression, and channeled by technical precision. I aim to build meaningful experiences through clean elegant code. Though I haven’t been a developer for long, I’m on a humble flight.
+Though I haven’t been a developer for long, I’m on a humble flight.
 
 <br/>
 <hr/>
