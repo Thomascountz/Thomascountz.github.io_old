@@ -15,16 +15,20 @@ img: /img/bash.jpg
 <p>A command-line Connect Four game that I wrote while working through <a href="http://www.theodinproject.com" target="none">The Odin Project</a>.</p>
 
 <br>
-<h1>What does it do?</h1>
+<h1>What problem does it solve?</h1>
 <br>
-
-<p><a href="https://en.wikipedia.org/wiki/Connect_Four" target="none">Connect Four</a> is a board game for two players. The board has a seven rows and six columns. Each player takes turns stacking their colored tokens into the bottom-most position of each of the six columns. The first player to stack four tokens in a row, either horizontally, vertically, or diagonally, wins! This command-line game is exactly that.</p>
+<p>
+<a href="https://en.wikipedia.org/wiki/Connect_Four" target="none">Connect Four</a> is a board game for two players. The board has a seven rows and six columns. Each player takes turns stacking their colored tokens into the bottom-most position of each of the six columns. The first player to stack four tokens in a row, either horizontally, vertically, or diagonally, wins! This command-line game is exactly that.</p>
 
 <br>
 <h1>What's inside?</h1>
 <br>
 
-<p>Firstly, writing this game really helped to understand OOP and TDD principles. My file tree looks like this:</p>
+<p>
+<strong>tl;dr</strong> The first Ruby script that I'm proud to show off, I really got to practice breaking down complex problems into bite-sized parts, and then test those parts to ensure that as I learn more, my code can be refactored.
+<hr>
+<br>
+Firstly, writing this game really helped to understand OOP and TDD principles. My file tree looks like this:</p>
 
 {% highlight ruby %}
   .
