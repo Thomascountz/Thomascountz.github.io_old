@@ -1,14 +1,13 @@
 ---
 layout: post
-title: Connect Four
+title: CLI Connect Four
 description: CLI Connect Four Game
 published: true
 img: /img/bash.jpg
 ---
-<h2>
-<a href="https://github.com/Thomascountz/odin_projects/tree/master/connectfour" target="_blank">Connect Four</a> 
-</h2>
-
+<h1 class="center">
+<a href="https://github.com/Thomascountz/odin_projects/tree/master/connectfour" target="_blank">Github Repo</a> 
+</h1>
 <br>
 <h1>What is this?</h1>
 <br>

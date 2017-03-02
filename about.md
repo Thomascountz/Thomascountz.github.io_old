@@ -25,7 +25,7 @@ I am inspired by knowledge, spurred by an impetus for expression, and channeled 
 	<a href="https://twitter.com/thomascountz" target="_blank"><i class="fa fa-twitter-square"></i></a>
 </span>
 
-<div class="col three caption">
+<div class="col three center">
 	Or just email: thomascountz@gmail.com
 </div>
 
