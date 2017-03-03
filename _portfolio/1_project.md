@@ -25,10 +25,10 @@ img: /img/bash.jpg
 <br>
 
 <p>
-<strong>tl;dr</strong> The first Ruby script that I'm proud to show off, I really got to practice breaking down complex problems into bite-sized parts, and then test those parts to ensure that as I learn more, my code can be refactored.
+<strong>tl;dr</strong> The first Ruby script that I'm proud to show off, I got to practice breaking down complex problems into bite-sized parts, and then test those parts to ensure that as I learn more, my code can be refactored.
 <hr>
 <br>
-Firstly, writing this game really helped to understand OOP and TDD principles. My file tree looks like this:</p>
+Firstly, writing this game helped me begin to understand OOP and TDD principles. My file tree looks like this:</p>
 
 {% highlight ruby %}
   .
@@ -44,7 +44,7 @@ Firstly, writing this game really helped to understand OOP and TDD principles. M
       └── spec_helper.rb
 {% endhighlight %}
 
-<p>As you can probably tell, my focus from early on was with the separation of concerns. Each class was contained with it's own file, and each class had it's own test. Speaking of tests, this project was my first experience using doubles like <code>player1 = double('player')</code> to ensure that one class' tests aren't dependent on a separate class.<br><br>The other very fun part of building this game was writing the <code>Board#win?</code> method. I approached this problem a few different ways. The first thing to note is that I used a nested array to represent my board:</p>
+<p>My focus from early on was with the separation of concerns: each class was contained within it's own file, and each class had it's own test. Speaking of tests, this project was my first experience using doubles like <code>player1 = double('player')</code> to ensure that one class' tests weren't dependent on another class.<br><br>The other very fun part of building this game was writing the <code>Board#win?</code> method. I approached this problem a few different ways. The first thing to note is that I used a nested array to represent my board:</p>
 
 {% highlight ruby %}
 [['.', '.', '.', '.', '.', '.', '.'],
@@ -76,7 +76,7 @@ def horizontal_win?(args = {})
 end
 {% endhighlight %}
 
-<p>This method was written to check for horizontal wins and similar methods were written to check for diagonal and vertical wins as well. Firstly, this code accepts an <code>args</code> array to take the pressure of the method caller to keep track of so many representational numbers. Secondly, the code iterates four times and simply adds one to <count>count</count> if token in either direction matches the token that was just played.<br><br>I had some weird edge case errors with the code initially, for example, when <code>column - i</code> would equal a negative number, the method would then be checking the end of the array, and if their happened to be a matching token on the opposite side, a win would be returned. Luckily testing helped with this!</p>
+<p>This method was written to check for horizontal wins and similar methods were written to check for diagonal and vertical wins as well. This code accepts an <code>args</code> array to take the pressure off the method caller to keep track of so many representational numbers. Then, the code iterates four times and simply adds one to <count>count</count> if token in either direction matches the token that was just played.<br><br>I had some weird edge case errors with the code initially, for example, when <code>column - i</code> would equal a negative number, the method would then be checking the end of the array, and if there happened to be a matching token there, a win would be returned. Luckily testing helped with this!</p>
 
 {% highlight ruby %}
   it 'returns false' do
@@ -102,4 +102,4 @@ end
 <br>
 <h1>What did I learn?</h1>
 <br>
-<p>Well if I haven't gone through it all already, I've learned TDD with RSpec, OOP and separation of concerns, and to have fun trying new things!</p> 
+<p>If I haven't gone through it all already, I've learned TDD with RSpec, OOP principals and separation of concerns, and to have fun trying new things!</p> 
