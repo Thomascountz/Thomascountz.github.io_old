@@ -8,7 +8,7 @@ published: true
 This is a quick rundown of how to install RSpec and Capybara in a new Rails project.
 <hr>
 <br>
-Create a new rails app without the Test::Unity
+Create a new rails app without Test::Unit
 {% highlight ruby %}
 $ rails new [app_name] --skip-test-unit
 {% endhighlight %}
