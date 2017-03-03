@@ -29,7 +29,7 @@ Secret Board allows non-signed-in users who visit the site to see a list of anon
 <h1>What's inside?</h1>
 <br>
 <p>
-<strong>tl;dr</strong> As my first solo rails project, I practiced wireframing, TDD with RSpec and Capybara, and built a focused MVP that will allow my to feel more confident using industry standard authentication gems.
+<strong>tl;dr</strong> As my first solo rails project, I practiced wireframing, TDD with RSpec and Capybara, and built a focused MVP that will allow me to feel more confident using industry standard authentication gems.
 <hr>
 <br>
 This project was an obvious segue from <a href="https://www.railstutorial.org" target="_blank">Michael Hartl's Tutorial</a>, but I wanted to do this one on my own. What I had most trouble following in Hartl's book was his testing, which as of the Fourth Edition (Rails 5), uses Test::Unit, rather than RSpec, which I'm more familiar with. This led me to want to try my hand at writing my own tests with RSpec, rather than simply adapting his tests for my needs.
@@ -64,14 +64,14 @@ Next, I wrote some user stories:
   <li>When I click 'login', I see a form with two inputs for an email address and password, and a submit button</li>
   <li>When I type invalid information and click 'submit', I see text explaining that there is an error</li>
   <li>When I type valid information and click 'submit', I'm taken back to the homepage</li>
-  <li>On the homepage, I see text telling my I'm logged in</li>
+  <li>On the homepage, I see text telling me that I'm logged in</li>
   <li>When I refresh the page, the text is gone</li>
   <li>On the homepage, I see the same text-based posts, this time with named authors and a link to logout</li>
   <li>On the homepage, I also now see a link to create a new post</li>
   <li>When I click 'create post' I see a form with one input to create the body of a post, and a submit button</li>
   <li>When I leave the box blank and press submit, I see text explaining that there is an error</li>
   <li>When I add text to the input and press submit, I'm taken back to the homepage</li>
-  <li>On the homepage, I see text telling me the post has been created successfully</li>
+  <li>On the homepage, I see text telling me that the post has been created successfully</li>
   <li>When I refresh the page, the text is gone</li>
   <li>On the homepage, I see a new post which is authored by me</li>
   <li>When I click 'logout', I'm still on the homepage</li>
@@ -132,7 +132,7 @@ With a wireframe in hand and a list of user stories, it was relatively simple to
 ...
 {% endhighlight %}
 <br>
-Led by these tests, I had to figure out what kind of controllers and models I would need, and then then begin to write tests for those too. I obviously didn't complete the test suite before I began coding anything at all, but because I was familiar with the sessions login pattern, thanks to Hartl's book, I was able to gently guide myself through the TDD process.
+Led by these tests, I had to figure out what kind of controllers and models I would need, and then then begin to write tests for those too. I didn't complete the entire test suite before I began coding anything at all, but because I was familiar with the sessions-login pattern, thanks to Hartl's book, I was able to gently guide myself through the TDD process.
 <br>
 <br>
 Continuing through the process, I had my wireframe, user stories, and integration specs guiding me to a well-tested MVP. That last part is what was most important to me. It was tempting to add features here and there, but the development process stayed on track thanks to the groundwork that was laid before I even typed <code>$ rails new</code>.
@@ -147,7 +147,7 @@ This was a very powerful app for me to create. With complete test coverage, I ca
 <ul>
   <li>Account Creation/Deletion</li>
   <li>"Remember me" on login</li>
-  <li>User Groups</li>
+  <li>Edit/Delete posts</li>
   <li>Styling and Responsiveness</li>
   <li>Moderation/Admin Accounts</li>
 </ul>
@@ -159,5 +159,5 @@ This toy app is also exactly the kind of thing I'll use to test upgrading DIY-Au
 <h1>What did I learn?</h1>
 <br>
 <p>
-Well in case I haven't already covered everything, I began understanding some agile methodologies while reinforcing my understanding of RSpec and Capybara. Most obviously, I began to understand browser sessions, model authentication, controller before-actions, and debugging.
+Well in case I haven't already covered everything, I began understanding some agile methodologies while reinforcing my understanding of RSpec and Capybara. Most obviously, I began to understand browser sessions, model validations, controller before-actions, and debugging.
 </p> 
