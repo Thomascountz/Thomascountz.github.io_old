@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rails App Secret Board
+title: Secret Board
 description: A Study of Auth, Sessions, and BDD/TDD
 published: true
 img: /img/anonymous.jpg
