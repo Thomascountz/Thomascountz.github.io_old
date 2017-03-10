@@ -10,11 +10,19 @@ img: /img/anonymous.jpg
 <a href="https://github.com/Thomascountz/secret_board/" target="_blank">Github Repo</a> 
 </h1>
 <br>
+<h1>Screenshots</h1>
+<div class="img_row" style="height: 100%">
+	<img class="col one" src="/img/secret_board_home.png">
+	<img class="col one" src="/img/secret_board_login.png">
+	<img class="col one" src="/img/secret_board_new.png">
+</div>
+<br>
+<br>
 <h1>What is this?</h1>
 <br>
 
 <p>
-An unstyled Rails app that I wrote while working through <a href="http://www.theodinproject.com" target="none">The Odin Project</a>.
+A CRUD Rails app that I wrote while working through <a href="http://www.theodinproject.com" target="none">The Odin Project</a>.
 </p>
 
 <br>
@@ -29,7 +37,7 @@ Secret Board allows non-signed-in users who visit the site to see a list of anon
 <h1>What's inside?</h1>
 <br>
 <p>
-<strong>tl;dr</strong> As my first solo rails project, I practiced wireframing, TDD with RSpec and Capybara, and built a focused MVP that will allow me to feel more confident using industry standard authentication gems.
+<strong>tl;dr</strong> As my first solo rails project, I practiced building a CRUD application without scaffolding, wireframing and MVP planning/managment with <a href="http://www.trello.com" target="_blank">Trello</a>, Version contol with Git and Github, TDD with <a href="http://rspec.info/" target="_blank">RSpec</a> and Capybara, integrating <a href="http://www.getbootstrap.com" target="_blank">Twitter's Bootstrap</a>, and manipulating client cookies and sessions.
 <hr>
 <br>
 This project was an obvious segue from <a href="https://www.railstutorial.org" target="_blank">Michael Hartl's Tutorial</a>, but I wanted to do this one on my own. What I had most trouble following in Hartl's book was his testing, which as of the Fourth Edition (Rails 5), uses Test::Unit, rather than RSpec, which I'm more familiar with. This led me to want to try my hand at writing my own tests with RSpec, rather than simply adapting his tests for my needs.
@@ -126,7 +134,7 @@ With a wireframe in hand and a list of user stories, it was relatively simple to
   end
   
   context "with valid login information followed by logout" do
-    it 'rerenders the form with an alert message' 
+    it 'rerenders the homepage with an alert message' 
   end
   
 ...
@@ -148,7 +156,7 @@ This was a very powerful app for me to create. With complete test coverage, I ca
   <li>Account Creation/Deletion</li>
   <li>"Remember me" on login</li>
   <li>Edit/Delete posts</li>
-  <li>Styling and Responsiveness</li>
+  <li><strike>Styling and Responsiveness</strike> 3.10.2017</li>
   <li>Moderation/Admin Accounts</li>
 </ul>
 
