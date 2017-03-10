@@ -155,7 +155,7 @@ This was a very powerful app for me to create. With complete test coverage, I ca
 <ul>
   <li>Account Creation/Deletion</li>
   <li>"Remember me" on login</li>
-  <li>Edit/Delete posts</li>
+  <li>Edit<strike>/Delete</strike> posts 3.10.2017</li>
   <li><strike>Styling and Responsiveness</strike> 3.10.2017</li>
   <li>Moderation/Admin Accounts</li>
 </ul>
