@@ -1,33 +1,36 @@
----
-layout: default
+--- 
+layout: page 
 ---
 
 <div class="header-bar">
-  <h1>Thomas Countz</h1>
-  <h2>Rails Developer NYC</h2>
-  <div class="col three center">
-	 <a href="mailto:thomascountz@gmail.com">thomascountz@gmail.com</a>
-  </div>
-  <div class="contacticon center">  
-    <a href="mailto:thomascountz@gmail.com"><i class="fa fa-envelope-square"></i></a>
-    <a href="https://github.com/thomascountz" target="_blank"><i class="fa fa-github-square"></i></a>
-    <a href="https://www.linkedin.com/in/thomas-countz-8b0951135/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-    <a href="https://twitter.com/thomascountz" target="_blank"><i class="fa fa-twitter-square"></i></a>
-  </div>
-  <br/>
-  <hr>
-  <br/>
+	<h1>Thomas Countz</h1>
+	<h2>Rails Developer</h2>
 </div>
 
+<br/>
 
-<ul class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <h2><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-        <p class="post-meta">{{ post.date | date: '%B %-d, %Y — %H:%M' }}</p>
-        <p>{{ post.description }}</p>
-        <br/>
-        <hr/>
-      </li>
-    {% endfor %}
-</ul>
+<img class="col one right" src="/img/prof_pic.jpg">
+
+<br/> I am a professional actor, baker, and coffee snob now turned self-taught web developer living in NYC.
+<br>
+<br> I fell in love with web development not only for its rewarding technical challanges, but for its community. I began studying with a bit of a chip on my shoulder, but already I've been met with such warmth, passion, collaboration, and creativity from
+my peers and mentors.
+<br>
+<br> As I grow, refocus, design, scrap, build, and discover all the brilliance in this field, I take time to pause. I am inspired by knowledge, spurred by an impetus for expression, and channeled by technical precision. I aim to build meaningful experiences
+through clean elegant code, collaborate with peers and co-creators to express new ideas, and to enrich and maintain products and servies that solve problems with dependable solutions.
+<br>
+<br> Though I haven’t been a developer for long, I’m on a humble flight.
+
+<br/>
+<br/>
+<hr>
+
+<div class="col three center">
+	<a href="mailto:thomascountz@gmail.com">thomascountz@gmail.com</a>
+</div>
+<div class="contacticon center">
+	<a href="mailto:thomascountz@gmail.com"><i class="fa fa-envelope-square"></i></a>
+	<a href="https://github.com/thomascountz" target="_blank"><i class="fa fa-github-square"></i></a>
+	<a href="https://www.linkedin.com/in/thomas-countz-8b0951135/" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+	<a href="https://twitter.com/thomascountz" target="_blank"><i class="fa fa-twitter-square"></i></a>
+</div>

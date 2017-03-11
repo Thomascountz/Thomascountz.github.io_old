@@ -37,7 +37,7 @@ Secret Board allows non-signed-in users who visit the site to see a list of anon
 <h1>What's inside?</h1>
 <br>
 <p>
-<strong>tl;dr</strong> As my first solo rails project, I practiced building a CRUD application without scaffolding, wireframing and MVP planning/managment with <a href="http://www.trello.com" target="_blank">Trello</a>, Version contol with Git and Github, TDD with <a href="http://rspec.info/" target="_blank">RSpec</a> and Capybara, integrating <a href="http://www.getbootstrap.com" target="_blank">Twitter's Bootstrap</a>, and manipulating client cookies and sessions.
+<strong>tl;dr</strong> As my first solo rails project, I practiced building a CRUD application without scaffolding, wireframing and MVP planning/management with <a href="http://www.trello.com" target="_blank">Trello</a>, Version control with Git and Github, TDD with <a href="http://rspec.info/" target="_blank">RSpec</a> and Capybara, integrating <a href="http://www.getbootstrap.com" target="_blank">Twitter's Bootstrap</a>, and manipulating client cookies and sessions.
 <hr>
 <br>
 This project was an obvious segue from <a href="https://www.railstutorial.org" target="_blank">Michael Hartl's Tutorial</a>, but I wanted to do this one on my own. What I had most trouble following in Hartl's book was his testing, which as of the Fourth Edition (Rails 5), uses Test::Unit, rather than RSpec, which I'm more familiar with. This led me to want to try my hand at writing my own tests with RSpec, rather than simply adapting his tests for my needs.
@@ -169,3 +169,4 @@ This toy app is also exactly the kind of thing I'll use to test upgrading DIY-Au
 <p>
 Well in case I haven't already covered everything, I began understanding some agile methodologies while reinforcing my understanding of RSpec and Capybara. Most obviously, I began to understand browser sessions, model validations, controller before-actions, and debugging.
 </p> 
+
