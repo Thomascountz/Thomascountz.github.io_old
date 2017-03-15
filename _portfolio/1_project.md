@@ -2,7 +2,7 @@
 layout: post
 title: Chalk
 description: A Social Media App for Climbers
-published: true
+published: false
 img: /img/bouldering_woman.jpg
 ---
 <h1>
