@@ -7,7 +7,7 @@ img: /img/peanuts_home.png
 ---
 <h1>
 <a href="https://peanuts-app.herokuapp.com" target="_blank">Deployed Here</a> | 
-<a href="https://github.com/Thomascountz/chalk/" target="_blank">Github Repo</a> 
+<a href="https://github.com/Thomascountz/peanuts/" target="_blank">Github Repo</a> 
 </h1>
 <br>
 <h1>What is this?</h1>
