@@ -1,8 +1,8 @@
 ---
 layout: post
-title: View a File without Checking Out
+title: View a File without Checking it Out
 date: 2017-04-26 18:02:00
-description: Quickly View A File on a separate Branch Without Checking Out
+description: Quickly View a File on a Separate Branch without Checking Out
 published: true
 ---
 To view a file in a separate branch without using `git checkout` to update the file in your working tree, use `git show` instead:
