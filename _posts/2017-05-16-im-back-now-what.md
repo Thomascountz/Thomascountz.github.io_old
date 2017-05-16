@@ -3,7 +3,7 @@ layout: post
 title: Consider This My First Commit to Getting Back On Track
 date: 2017-05-16 13:43:00
 description: What to do after you've fallen off track?
-published: false
+published: true
 ---
 
 # I'm Back 
