@@ -10,10 +10,18 @@ img: /img/peanuts_home.png
 <a href="https://github.com/Thomascountz/peanuts/" target="_blank">Github Repo</a> 
 </h1>
 <br>
+<h1>Screenshots</h1>
+<div class="img_row" style="height: 100%">
+  <a href="/img/peanuts_home.png"><img class="col one" src="/img/peanuts_home.png"></a>
+  <a href="/img/peanuts_dashboard.png"><img class="col one" src="/img/peanuts_dashboard.png"></a>
+  <a href="/img/peanuts_events.png"><img class="col one" src="/img/peanuts_events.png"></a>
+</div>
+<br>
+<br>
 <h1>What is this?</h1>
 <br>
 <p>
-Peanuts is a work-in-progress app that empowers event managers with the ease of ticket sales and attendee lists. Attendees can easily purchase tickets and have eTickets delivered to their email. The MVP of this platform will only "sell" tickets with a price of $0.</p>
+Peanuts is a Rails app that empowers event managers with an easy interface to manage their ticket sales and attendee lists. Attendees can easily purchase tickets and have eTickets delivered to their email.</p>
 
 <br>
 <h1>What problem does it solve?</h1>

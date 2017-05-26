@@ -12,9 +12,9 @@ img: /img/anonymous.jpg
 <br>
 <h1>Screenshots</h1>
 <div class="img_row" style="height: 100%">
-	<img class="col one" src="/img/secret_board_home.png">
-	<img class="col one" src="/img/secret_board_login.png">
-	<img class="col one" src="/img/secret_board_new.png">
+	<a href="/img/secret_board_home.png"><img class="col one" src="/img/secret_board_home.png"></a>
+	<a href="/img/secret_board_login.png"><img class="col one" src="/img/secret_board_login.png"></a>
+	<a href="/img/secret_board_new.png"><img class="col one" src="/img/secret_board_new.png"></a>
 </div>
 <br>
 <br>
