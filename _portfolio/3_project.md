@@ -6,7 +6,7 @@ published: true
 img: /img/bash.jpg
 ---
 <h1 class="center">
-<a href="https://github.com/Thomascountz/odin_projects/tree/master/connectfour" target="_blank">Github Repo</a> 
+<a href="https://github.com/Thomascountz/connect_four" target="_blank">Github Repo</a> 
 </h1>
 <br>
 <h1>What is this?</h1>
@@ -97,7 +97,7 @@ end
 <h1>Where do we go from here?</h1>
 <br>
 
-<p>Refactoring and playtime! With this code and tests in hand, I can now try to implement a recursive method to check for winning patterns, I can try to implement a <a href="https://chessprogramming.wikispaces.com/Bitboards">bitboard</a>, and I can deploy a frontend so that I can play online with friends!</p>
+<p>I first wrote this code around November 2016, so looking back at it now gets me excited to refactor. Thanks to POODR, I'm looking to get my hands dirty cleaning this code up before adding features.</p>
 
 <br>
 <h1>What did I learn?</h1>
