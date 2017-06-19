@@ -52,7 +52,7 @@ def forecast
 end
 {% endhighlight %}
 <br>
-As far as API wrappers go, this one isn't so bad. Thanks to HTTParty and the `HTTParty` object that is returns, making API calls is really that simple. However, let's not pretend, this code sucks. It's more like a script; something that you may just have to run once and then burn it. However, our scope is larger than that. We want to create a reusable class. So let's do some refactoring and see if we can't set ourselves up for creating a class with a single responsibility.
+As far as API wrappers go, this one isn't so bad. Thanks to HTTParty and the `HTTParty` object that is returns, making API calls is really that simple. However, let's not pretend, this code sucks. It's more like a script; something that you may just have to run once and then burn it. However, our scope is larger than that. We want to create a reusable class. So let me do some refactoring and see if I can't set myself up for creating a class with a single responsibility.
 <br><br><br><br>
 <pre><h1>898006e created DarkSky class</h1></pre>
 {% highlight ruby %}
@@ -135,15 +135,15 @@ Right now, those variables simply contain data. However, thanks to `attr_accesso
 
 So that's what I did here.
 <br><br>
-Secondly, I moved the string interpolating for the API request path from `forecast`, into it's own method, `build_path`. Why? For one, the line was too long. For two, that `build_path` method is guarenteed to change later! (I'm going to want to be able to request some of the optional parameters that Dark Sky give me). And for three, Sandy wants me to. 
+Secondly, I moved the string interpolating for the API request path from `forecast`, into it's own method, `build_path`. Why? For one, the line was too long. For two, that `build_path` method is guaranteed to change later! (I'm going to want to be able to request some of the optional parameters that Dark Sky gives me). And for three, Sandy wants me to. 
 
 > Methods, like classes, should have a single responsibility. All of the same reasons apply; having just one responsibility makes them easy to change and easy to reuse. All the same design techniques work; ask them questions about what they do and try to describe their responsibilities in a single sentence. -[POODR](http://www.poodr.com/) pg 29
 
 <br><br><br><br>
 <pre><h1>3843bee isolated responsibilities</h1></pre>
-Something still bothers me about this code. Specifically, the `latitude` and `latitude`. These variables seem like they should belong to a separate object; maybe a `Location` class? However, I don't really have a good reason to build a new class yet.
+Something still bothers me about this code. Specifically, the `latitude` and `longitude`. These variables seem like they should belong to a separate object; maybe a `Location` class? However, I don't really have a good reason to build a new class yet.
 <br><br>
-However, consider the examples: what if I'll want to store some coordinates as canonical data, i.e. `new_york = Location.new('40.7128', '74.0059')` and `los_angeles = Location.new('34.0522', '118.2437')` Surely I'd want a `Location` object for that. Or maybe I'd want to add methods to my objects like `Location#season`, `Location#local_time`, or `Location#elevation`. In this case it would make sense to me to abstract these methods out of our `DarkSky` class. 
+Let's consider the examples: what if I'll want to store some coordinates as canonical data, i.e. `new_york = Location.new('40.7128', '74.0059')` and `los_angeles = Location.new('34.0522', '118.2437')` Surely I'd want a `Location` object for that. Or maybe I'd want to add methods to my objects like `Location#season`, `Location#local_time`, or `Location#elevation`. In this case it would make sense to me to abstract these methods out of our `DarkSky` class. 
 <br><br>
 However, as of now, I don't have those feature requests or specs, I just have an inkling. Premature design can be dangerous. It can trap me into building something that's more complicated than I need it to be, or at best, it can funnel my creativity by forcing me to only think of my application in one specific way. Sandy says: 
 >Any decision you make in advance of an explicit requirement is just a guess. Don’t decide; preserve your ability to make a decision later. -[POODR](http://www.poodr.com/) pg 32
