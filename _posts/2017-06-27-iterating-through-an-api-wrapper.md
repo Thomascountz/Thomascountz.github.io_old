@@ -90,7 +90,7 @@ RSpec.describe 'dark sky', :vcr do
   end
 end
 {% endhighlight %}
-<br><br>
+<br>
 So how do we know if our new class here has a single responsibility? Let's see what Sandy has to say in POODR: 
 
 >Another way to hone in on what a class is actually doing is to attempt to describe it in one sentence. Remember that a class should do the smallest possible useful thing. That thing ought to be simple to describe. If the simplest description you can devise uses the word “and,” the class likely has more than one responsibility. If it uses the word “or,” then the class has more than one responsibility and they aren’t even very related. -[POODR](http://www.poodr.com/) pg 22
@@ -127,7 +127,7 @@ class DarkSky
   end
 end
 {% endhighlight %}
-<br><br>
+<br>
 Ahhh... That's better. But why did I make these design choices now, even though I don't know where I'm going? Let's first talk about `latitude` and `longitude`.
 <br><br>
 Right now, those variables simply contain data. However, thanks to `attr_accessor`, that data is now accessed by sending a message; meaning, if `latitude` or `longitude` ever need to change, I now only have to redefine the methods. It seems moot at this point because I'm initializing the variable when I initialize an object, but that too could need to change later. Sandy says:
@@ -141,9 +141,9 @@ Secondly, I moved the string interpolating for the API request path from `foreca
 
 <br><br><br><br>
 <pre><h1>3843bee isolated responsibilities</h1></pre>
-Something still bothers me about this code. Specifically, the `latitude` and `latitude`. These variables seem like they should belong to a separate object; maybe a `Location` class? However, I don't really have a good reason to build a new class yet. I could just go ahead and write it, just in case I'll need a `Location` object with more behavior later:
+Something still bothers me about this code. Specifically, the `latitude` and `latitude`. These variables seem like they should belong to a separate object; maybe a `Location` class? However, I don't really have a good reason to build a new class yet.
 <br><br>
-For example, What if I'll want to store some coordinates as canonical data, i.e. `new_york = Location.new('40.7128', '74.0059')` and `los_angeles = Location.new('34.0522', '118.2437')` Surely I'd want a `Location` object for that. Or maybe I'd want to add methods to my objects like `Location#season`, `Location#local_time`, or `Location#elevation`. In this case it would make sense to me to abstract these methods out of our `DarkSky` class. 
+However, consider the examples: what if I'll want to store some coordinates as canonical data, i.e. `new_york = Location.new('40.7128', '74.0059')` and `los_angeles = Location.new('34.0522', '118.2437')` Surely I'd want a `Location` object for that. Or maybe I'd want to add methods to my objects like `Location#season`, `Location#local_time`, or `Location#elevation`. In this case it would make sense to me to abstract these methods out of our `DarkSky` class. 
 <br><br>
 However, as of now, I don't have those feature requests or specs, I just have an inkling. Premature design can be dangerous. It can trap me into building something that's more complicated than I need it to be, or at best, it can funnel my creativity by forcing me to only think of my application in one specific way. Sandy says: 
 >Any decision you make in advance of an explicit requirement is just a guess. Don’t decide; preserve your ability to make a decision later. -[POODR](http://www.poodr.com/) pg 32
@@ -176,14 +176,14 @@ class DarkSky
   end
 end
 {% endhighlight %}
-<br><br>
+<br>
 By making this seemingly gratuitous change now, I can easily extract `Location` into a separate class if, and only if, future specifications dictate.
 
 <br><br><br><br>
 <pre><h1>3ae321dd managed dependencies</h1></pre>
 So far, I only have one class, so luckily there isn't any object coupling to worry about. (I'm not going to consider my class' integration with the HTTParty library.) But, I do need to think about how this class will be used; how it's methods will be called.
 <br><br>
-As it sits, any caller who wants to instantiate a `DarkSky` object will need to include `latitude` and `longitude` as parameters to the `DarkSky#new` method, in that order. That's not a tall order, but consider how easy it would be to mix those two up! Also, what if we pass in `Float`s, rather than `String`s? I'll want to take care of this by allowing the caller to pass in a hash and providing defaults in case their not included.
+As it sits, any caller who wants to instantiate a `DarkSky` object will need to include `latitude` and `longitude` as parameters to the `DarkSky#new` method, in that order. That's not a tall order, but consider how easy it would be to mix those two up! Also, what if we pass in `Float`s, rather than `String`s? Even besides that, we're going to want to be able to add parameters later, without breaking any current calls to `DarkSky#new`! I'll want to take care of this now by allowing the caller to pass in a hash and providing defaults in case they're not included. 
 {% highlight ruby %}
 require 'httparty'
 
