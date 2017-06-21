@@ -20,16 +20,16 @@ The more I learned, the more I learned I needed to learn. And I fell into the tr
 The plan is to build an API wrapper for [Dark Sky's Weather API](https://darksky.net/poweredby/). I'll use this wrapper to build out a [Telegram](https://core.telegram.org/bots/) chat bot that will let you know whether or not you'll need an umbrella. Simple, right? Yes. But not easy. This article will only focus on the API, the bot will have to come later. Notable gems include [HTTParty](https://github.com/jnunemaker/httparty), and [RSpec](https://github.com/rspec/rspec) with [VCR](https://github.com/vcr/vcr) and [WebMock](https://github.com/bblimke/webmock). 
 <br><br><br><br>
 <pre><h1>cb883c6 added first spec</h1></pre>
-Without much planning, here what I know based off of [Dark Sky's API docs](https://darksky.net/dev/docs) There are two endpoints: a [Forecast Request](https://darksky.net/dev/docs/forecast) which returns the current weather forecast, and a [Time Machine Request](https://darksky.net/dev/docs/time-machine) which returns the observed or forecast weather conditions for a date in the past or future. I'm going to be using the Forecast endpoint.
+Without much planning, heres what I know based off of [Dark Sky's API docs](https://darksky.net/dev/docs). There are two endpoints: a [Forecast Request](https://darksky.net/dev/docs/forecast) which returns the current weather forecast, and a [Time Machine Request](https://darksky.net/dev/docs/time-machine) which returns the observed or forecast weather conditions for a date in the past or future. I'm going to be using the Forecast endpoint.
 <br><br>
-The endpoint returns a JSON object, perfect, and in order to make a request, I'm required to include three things. An API Key and the location's latitude and longitude. The resulting query path looks like this: `https://api.darksky.net/forecast/[key]/[latitude],[longitude]`
+The endpoint returns a JSON object-- perfect. In order to make a request, I'm required to include three things: An API Key and the location's latitude and longitude. The resulting query path looks like this: `https://api.darksky.net/forecast/[key]/[latitude],[longitude]`
 <br><br>
 Looking at HTTParty's docs, I see that all I need to do to send a request is supply the url to `HTTParty.get`, and I'll get back an `HTTParty` object, which includes methods like `#body`, `#headers`, and `#ok?`. So I can write my first specs in true TDD fashion. (Note that I'm using RSpec with VCR and WebMock).
 <br><br>
 {% highlight ruby %}
 require './spec_helper'
 
-RSpec.describe 'dark sky', vcr: { record: :once } do
+RSpec.describe 'dark sky', :vcr do
   context 'when making a valid API request' do
     it 'returns with a status of OK' do
       VCR.use_cassette('new_york') do
@@ -40,7 +40,7 @@ RSpec.describe 'dark sky', vcr: { record: :once } do
 end
 {% endhighlight %}
 <br>
-So now I have to write a method, `forecast` which returns an object that responds to `#ok?`, which, as we discussed, an `HTTParty` object does!
+So now, I have to write a method, `forecast`, which returns an object that responds to `#ok?`, which, as we discussed, an `HTTParty` object does!
 <br><br>
 {% highlight ruby %}
 require 'httparty'
@@ -120,8 +120,6 @@ class DarkSky
     DarkSky.get(build_path)
   end
 
-  private
-
   def build_path
    "/#{DARKSKY_API_KEY}/#{latitude},#{longitude}"
   end
@@ -169,8 +167,6 @@ class DarkSky
 
   Location = Struct.new(:latitude, :longitude)
 
-  private
-
   def build_path
   	"/#{DARKSKY_API_KEY}/#{location.latitude},#{location.longitude}"
   end
@@ -205,8 +201,6 @@ class DarkSky
   end
 
   Location = Struct.new(:latitude, :longitude)
-
-  private
 
   def build_path
     "/#{DARKSKY_API_KEY}/#{location.latitude},#{location.longitude}"
