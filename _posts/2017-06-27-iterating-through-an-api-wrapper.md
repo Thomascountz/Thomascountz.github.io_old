@@ -216,7 +216,7 @@ end
 
 <br><br><br><br>
 <pre><h1>2131a7e stored response in instance variable</h1></pre>
-One last thing before I wrap up this section of my DarkSky class: making responsible requests. When I begin thinking about how I'm going to parse the JSON response from Dark Sky, I begin thinking about requests too. [Dark Sky's API docs](https://darksky.net/dev/docs) have an optional `exclude` string, which will allow me to make a query, and return a limited response. So, if I only want the `currently` response block, I can exclude all the others. This can be useful for when I want to only parse that block. However, this can lead me to make multiple calls to the API endpoint, every time I want want to parse a specific piece of data.
+One last thing before I wrap up this section of my DarkSky class: making responsible requests. When I begin thinking about how I'm going to parse the JSON response from Dark Sky, I begin thinking about requests too. Based on the [Dark Sky's API docs](https://darksky.net/dev/docs) the `Forecast` endpoint has an optional `exclude` query string, which will allow me to make a query, and return a limited response. So, if I only want the `currently` response block, I can exclude all the others. This can be useful for when I want to only parse that block. However, this can lead me to make multiple calls to the API endpoint-- every time I want want to parse a specific piece of data.
 <br><br>
 My solution then is to retrieve the entire response, and then parse things on my end. To do this, I'll store the response in an instance variable, and only make the request if no response has been stored in that variable yet. 
 {% highlight ruby %}
@@ -248,7 +248,7 @@ end
 {% endhighlight %}
 
 <br>
-There is a caveat with this solution, however. What happens when I want to parse a stored response that I made hours ago? That data would be stale! I could write a job clear the `@response` variable, but for my purposes, I'll instead leave that responsibility to the caller. Not a great design feature, but an appropriate solution for now. Because I made `@response` `attr_accessible`, I can call something like `new_york.response = nil`, and force the class to make a new request. 
+There is a caveat with this solution, however. What happens when I want to parse a stored response that I made hours ago? That data would be stale! I could write a job to clear the `@response` variable, but for my purposes, I'll instead leave that responsibility to the caller. Not a great design feature, but an appropriate solution for now. Because I made `@response` `attr_accessible`, I can call something like `new_york.response = nil`, and force the class to make a new request. 
 
 <br><br><br><br>
 <pre><h1>a822ae1 [WIP] To Be Continued</h1></pre>
