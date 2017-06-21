@@ -246,6 +246,7 @@ class DarkSky
   end
 end
 {% endhighlight %}
+
 <br>
 There is a caveat with this solution, however. What happens when I want to parse a stored response that I made hours ago? That data would be stale! I could write a job clear the `@response` variable, but for my purposes, I'll instead leave that responsibility to the caller. Not a great design feature, but an appropriate solution for now. Because I made `@response` `attr_accessible`, I can call something like `new_york.response = nil`, and force the class to make a new request. 
 
