@@ -69,7 +69,7 @@ class DarkSky
   end
 
   def forecast
-    self.class.get("/#{DARKSKY_API_KEY}/#{@latitude},#{@longitude}")
+    DarkSky.get("/#{DARKSKY_API_KEY}/#{@latitude},#{@longitude}")
   end
 end
 {% endhighlight %}
@@ -117,7 +117,7 @@ class DarkSky
   end
 
   def forecast
-    self.class.get(build_path)
+    DarkSky.get(build_path)
   end
 
   private
@@ -164,7 +164,7 @@ class DarkSky
   end
 
   def forecast
-    self.class.get(build_path)
+    DarkSky.get(build_path)
   end
 
   Location = Struct.new(:latitude, :longitude)
@@ -201,7 +201,7 @@ class DarkSky
   end
 
   def forecast
-    self.class.get(build_path)
+    DarkSky.get(build_path)
   end
 
   Location = Struct.new(:latitude, :longitude)
@@ -213,7 +213,44 @@ class DarkSky
   end
 end
 {% endhighlight %}
+
+<br><br><br><br>
+<pre><h1>2131a7e stored response in instance variable</h1></pre>
+One last thing before I wrap up this section of my DarkSky class: making responsible requests. When I begin thinking about how I'm going to parse the JSON response from Dark Sky, I begin thinking about requests too. [Dark Sky's API docs](https://darksky.net/dev/docs) have an optional `exclude` string, which will allow me to make a query, and return a limited response. So, if I only want the `currently` response block, I can exclude all the others. This can be useful for when I want to only parse that block. However, this can lead me to make multiple calls to the API endpoint, every time I want want to parse a specific piece of data.
+<br><br>
+My solution then is to retrieve the entire response, and then parse things on my end. To do this, I'll store the response in an instance variable, and only make the request if no response has been stored in that variable yet. 
+{% highlight ruby %}
+require 'httparty'
+
+# Wrapper for Dark Sky's Forecast API
+class DarkSky
+  attr_accessor :location, :response
+
+  include HTTParty
+  base_uri 'https://api.darksky.net/forecast'
+
+  def initialize(args = {})
+    latitude = args.fetch(:latitude, '40.7128').to_s
+    longitude = args.fetch(:longitude, '74.0059').to_s
+    @location = Location.new(latitude, longitude)
+  end
+
+  def forecast
+    @response ||= DarkSky.get(build_path)
+  end
+
+  Location = Struct.new(:latitude, :longitude)
+
+  def build_path
+    "/#{DARKSKY_API_KEY}/#{location.latitude},#{location.longitude}"
+  end
+end
+{% endhighlight %}
+<br>
+There is a caveat with this solution, however. What happens when I want to parse a stored response that I made hours ago? That data would be stale! I could write a job clear the `@response` variable, but for my purposes, I'll instead leave that responsibility to the caller. Not a great design feature, but an appropriate solution for now. Because I made `@response` `attr_accessible`, I can call something like `new_york.response = nil`, and force the class to make a new request. 
+
 <br><br><br><br>
 <pre><h1>a822ae1 [WIP] To Be Continued</h1></pre>
-
-
+Thanks to only the first two chapters of [POODR](http://www.poodr.com/), I feel more confident beginning new projects. Like TDD did for me before, the practice of refactoring has freed me up from needed to feel like I need to have all the answers right now. This code may not be perfect, but it's steps closer to matching my current level of understanding object oriented design.
+<br><br>
+The next steps for my newly built `DarkSky` class is to write some more specs and to parse the data returned. `HTTParty` has a great `#parsed_response` method that will turn the body of JSON into a hash. This data structure will provide a ton of dependency issues for me to tackle next. I'm sure Sandy will be there to help!
