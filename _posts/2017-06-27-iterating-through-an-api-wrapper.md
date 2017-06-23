@@ -5,7 +5,8 @@ date: 2017-06-17 20:43:00
 description: My git log into SOLID design
 published: true
 ---
-
+There's no doubt that Ruby thrives when used in an object oriented way. As a junior developer, I feel that it's crutial that I not only understand conventions and syntax, I understand design too. Sandy Metz has been a very public leader of SOLID design principals, and I love to be her follower. This article is my journey through the first chapters of her famour work, [Practical Object Oriented Design in Ruby](http://www.poodr.com/), while building a class to make external API requests. The code for this article can be found on github, [here](https://github.com/Thomascountz/weather_api). 
+<br><br>
 <pre><h1>d7fe119 initial commit</h1></pre>
 # "Writing tests isn't enough..." 
 <br>
