@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Weather API and Sandy Metz
+title: Weather API and Sandi Metz
 date: 2017-06-17 20:43:00
 description: My git log into SOLID design
 published: true
 ---
-There's no doubt that Ruby thrives when used in an object oriented way. As a junior developer, I feel that it's crutial that I not only understand conventions and syntax, I understand design too. Sandy Metz has been a very public leader of SOLID design principals, and I love to be her follower. This article is my journey through the first chapters of her famour work, [Practical Object Oriented Design in Ruby](http://www.poodr.com/), while building a class to make external API requests. The code for this article can be found on github, [here](https://github.com/Thomascountz/weather_api). 
+There's no doubt that Ruby thrives when used in an object oriented way. As a junior developer, I feel that it's crutial that I not only understand conventions and syntax, I understand design too. Sandi Metz has been a very public leader of SOLID design principals, and I love to be her follower. This article is my journey through the first chapters of her famour work, [Practical Object Oriented Design in Ruby](http://www.poodr.com/), while building a class to make external API requests. The code for this article can be found on github, [here](https://github.com/Thomascountz/weather_api). 
 <br><br>
 <pre><h1>d7fe119 initial commit</h1></pre>
 # "Writing tests isn't enough..." 
 <br>
-Damn. Sandy Metz's [famous talk on SOLID design](https://www.youtube.com/watch?v=8STtzjyDTTQ) in Ruby, along with the unparalleled [POODR](http://www.poodr.com/), has left me wanting to become a better developer. So, I sit down at my text editor, and I... I... well, what do I do? I need to design, right? I can't simply spit out perfect code. I need to design my tests, too! I don't want to write bad code because now I *know* better.
+Damn. Sandi Metz's [famous talk on SOLID design](https://www.youtube.com/watch?v=8STtzjyDTTQ) in Ruby, along with the unparalleled [POODR](http://www.poodr.com/), has left me wanting to become a better developer. So, I sit down at my text editor, and I... I... well, what do I do? I need to design, right? I can't simply spit out perfect code. I need to design my tests, too! I don't want to write bad code because now I *know* better.
 <br><br>
 I sat on my current project, which I'll get into in a moment, for days. It's gone through many many versions, however, after all that work, my `git log` shows up empty. I've written nothing. This may sound like a good thing, taking careful steps to plan before attacking this new challenge, but a whole lot of nothing got done. I became paralyzed by the thought of writing bad code.
 <br><br>
-The more I learned, the more I learned I needed to learn. And I fell into the trap that Sandy mentions, the trap of over-designing based on what we *think* will happen in the future. So, my solution is to go through the projects iterations here, and welcome in the *process* of design by trudging through stanky code.
+The more I learned, the more I learned I needed to learn. And I fell into the trap that Sandi mentions, the trap of over-designing based on what we *think* will happen in the future. So, my solution is to go through the projects iterations here, and welcome in the *process* of design by trudging through stanky code.
 <br><br>
 # Project Overview
 <br>
@@ -92,14 +92,14 @@ RSpec.describe 'dark sky', :vcr do
 end
 {% endhighlight %}
 <br>
-So how do we know if our new class here has a single responsibility? Let's see what Sandy has to say in POODR: 
+So how do we know if our new class here has a single responsibility? Let's see what Sandi has to say in POODR: 
 
 >Another way to hone in on what a class is actually doing is to attempt to describe it in one sentence. Remember that a class should do the smallest possible useful thing. That thing ought to be simple to describe. If the simplest description you can devise uses the word “and,” the class likely has more than one responsibility. If it uses the word “or,” then the class has more than one responsibility and they aren’t even very related. -[POODR](http://www.poodr.com/) pg 22
 
 <br>
 So what does our class do in one sentence? "It returns an HTTParty object from an API request to an external API."
 <br><br>
-I'm still getting code smells. However, I'm not sure where to go now. Sandy tells me that I should make design decisions prematurely. That I should resist, even if I fear my code would "dismay the design gurus." So what do I do? I write code that embraces change.
+I'm still getting code smells. However, I'm not sure where to go now. Sandi tells me that I should make design decisions prematurely. That I should resist, even if I fear my code would "dismay the design gurus." So what do I do? I write code that embraces change.
 <br><br><br>
 <pre><h1>8383ac6 embraced change</h1></pre>
 {% highlight ruby %}
@@ -129,12 +129,12 @@ end
 <br>
 Ahhh... That's better. But why did I make these design choices now, even though I don't know where I'm going? Let's first talk about `latitude` and `longitude`.
 <br><br>
-Right now, those variables simply contain data. However, thanks to `attr_accessor`, that data is now accessed by sending a message; meaning, if `latitude` or `longitude` ever need to change, I now only have to redefine the methods. It seems moot at this point because I'm initializing the variable when I initialize an object, but that too could need to change later. Sandy says:
+Right now, those variables simply contain data. However, thanks to `attr_accessor`, that data is now accessed by sending a message; meaning, if `latitude` or `longitude` ever need to change, I now only have to redefine the methods. It seems moot at this point because I'm initializing the variable when I initialize an object, but that too could need to change later. Sandi says:
 > Data very often has behavior that you don’t yet know about. Send messages to access variables, even if you think of them as data. -[POODR](http://www.poodr.com/) pg 26
 
 So that's what I did here.
 <br><br>
-Secondly, I moved the string interpolating for the API request path from `forecast`, into it's own method, `build_path`. Why? For one, the line was too long. For two, that `build_path` method is guaranteed to change later! (I'm going to want to be able to request some of the optional parameters that Dark Sky gives me). And for three, Sandy wants me to. 
+Secondly, I moved the string interpolating for the API request path from `forecast`, into it's own method, `build_path`. Why? For one, the line was too long. For two, that `build_path` method is guaranteed to change later! (I'm going to want to be able to request some of the optional parameters that Dark Sky gives me). And for three, Sandi wants me to. 
 
 > Methods, like classes, should have a single responsibility. All of the same reasons apply; having just one responsibility makes them easy to change and easy to reuse. All the same design techniques work; ask them questions about what they do and try to describe their responsibilities in a single sentence. -[POODR](http://www.poodr.com/) pg 29
 
@@ -144,7 +144,7 @@ Something still bothers me about this code. Specifically, the `latitude` and `lo
 <br><br>
 Let's consider the examples: what if I'll want to store some coordinates as canonical data, i.e. `new_york = Location.new('40.7128', '74.0059')` and `los_angeles = Location.new('34.0522', '118.2437')` Surely I'd want a `Location` object for that. Or maybe I'd want to add methods to my objects like `Location#season`, `Location#local_time`, or `Location#elevation`. In this case it would make sense to me to abstract these methods out of our `DarkSky` class. 
 <br><br>
-However, as of now, I don't have those feature requests or specs, I just have an inkling. Premature design can be dangerous. It can trap me into building something that's more complicated than I need it to be, or at best, it can funnel my creativity by forcing me to only think of my application in one specific way. Sandy says: 
+However, as of now, I don't have those feature requests or specs, I just have an inkling. Premature design can be dangerous. It can trap me into building something that's more complicated than I need it to be, or at best, it can funnel my creativity by forcing me to only think of my application in one specific way. Sandi says: 
 >Any decision you make in advance of an explicit requirement is just a guess. Don’t decide; preserve your ability to make a decision later. -[POODR](http://www.poodr.com/) pg 32
 
 She also has a solution. I can move the handling of `latitude` and `longitude` into an anonymous class, i.e., a Ruby `Struct`.
@@ -249,4 +249,4 @@ There is a caveat with this solution, however. What happens when I want to parse
 <pre><h1>a822ae1 [WIP] To Be Continued</h1></pre>
 Thanks to only the first two chapters of [POODR](http://www.poodr.com/), I feel more confident beginning new projects. Like TDD did for me before, the practice of refactoring has freed me up from needed to feel like I need to have all the answers right now. This code may not be perfect, but it's steps closer to matching my current level of understanding object oriented design.
 <br><br>
-The next steps for my newly built `DarkSky` class is to write some more specs and to parse the data returned. `HTTParty` has a great `#parsed_response` method that will turn the body of JSON into a hash. This data structure will provide a ton of dependency issues for me to tackle next. I'm sure Sandy will be there to help!
+The next steps for my newly built `DarkSky` class is to write some more specs and to parse the data returned. `HTTParty` has a great `#parsed_response` method that will turn the body of JSON into a hash. This data structure will provide a ton of dependency issues for me to tackle next. I'm sure Sandi will be there to help!
