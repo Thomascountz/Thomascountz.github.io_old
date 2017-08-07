@@ -18,6 +18,18 @@ img: /img/peanuts_home.png
 </div>
 <br>
 <br>
+<h1>UPDATE</h1> 
+<br>
+<h1>Checkout the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> codebase here.</h1> 
+<br>
+<p> 
+Peanuts has been a very challenging project for me; from simple CRUD app to complex CRUD app was a large leap. So large, in fact, that it's only in hindsight that I see how my awkward and unchecked decision-making has led me to an ill fated and difficult to manage codebase.  
+<br> 
+<br>
+Brilliant! What an amazing new challenge that lies ahead! The coveted "inherited legacy code that must be refractored!" Though valid, my mind takes me to another challenge: scrap and rebuild. So this codebase is out, and the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> is in. Check it out! 
+</p>
+<br>
+<br>
 <h1>What is this?</h1>
 <br>
 <p>
