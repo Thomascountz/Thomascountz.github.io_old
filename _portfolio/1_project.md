@@ -18,6 +18,7 @@ img: /img/peanuts_home.png
 </div>
 <br>
 <br>
+{% comment %}
 <h1>UPDATE</h1> 
 <br>
 <h1>Checkout the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> codebase here.</h1> 
@@ -30,6 +31,7 @@ Brilliant! What an amazing new challenge that lies ahead! The coveted "inherited
 </p>
 <br>
 <br>
+{% endcomment %}
 <h1>What is this?</h1>
 <br>
 <p>
