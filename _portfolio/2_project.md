@@ -1,149 +1,69 @@
 ---
 layout: post
-title: Secret Board
-description: A Study of Auth, Sessions, and BDD/TDD
+title: Peanuts
+description: A minimal event ticket sales app.
 published: true
-img: /img/anonymous.jpg
+img: /img/peanuts_home.png
 ---
 <h1>
-<a href="https://young-stream-65922.herokuapp.com" target="_blank">Deployed Here</a> | 
-<a href="https://github.com/Thomascountz/secret_board/" target="_blank">Github Repo</a> 
+<a href="https://peanuts-app.herokuapp.com" target="_blank">Deployed Here</a> | 
+<a href="https://github.com/Thomascountz/peanuts/" target="_blank">Github Repo</a> 
 </h1>
 <br>
 <h1>Screenshots</h1>
 <div class="img_row" style="height: 100%">
-	<a href="/img/secret_board_home.png"><img class="col one" src="/img/secret_board_home.png"></a>
-	<a href="/img/secret_board_login.png"><img class="col one" src="/img/secret_board_login.png"></a>
-	<a href="/img/secret_board_new.png"><img class="col one" src="/img/secret_board_new.png"></a>
+  <a href="/img/peanuts_home.png"><img class="col one" src="/img/peanuts_home.png"></a>
+  <a href="/img/peanuts_dashboard.png"><img class="col one" src="/img/peanuts_dashboard.png"></a>
+  <a href="/img/peanuts_events.png"><img class="col one" src="/img/peanuts_events.png"></a>
 </div>
 <br>
 <br>
+{% comment %}
+<h1>UPDATE</h1> 
+<br>
+<h1>Checkout the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> codebase here.</h1> 
+<br>
+<p> 
+Peanuts has been a very challenging project for me; from simple CRUD app to complex CRUD app was a large leap. So large, in fact, that it's only in hindsight that I see how my awkward and unchecked decision-making has led me to an ill fated and difficult to manage codebase.  
+<br> 
+<br>
+Brilliant! What an amazing new challenge that lies ahead! The coveted "inherited legacy code that must be refractored!" Though valid, my mind takes me to another challenge: scrap and rebuild. So this codebase is out, and the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> is in. Check it out! 
+</p>
+<br>
+<br>
+{% endcomment %}
 <h1>What is this?</h1>
 <br>
-
 <p>
-A CRUD Rails app that I wrote while working through <a href="http://www.theodinproject.com" target="none">The Odin Project</a>.
-</p>
+Peanuts is a Rails app that empowers event managers with an easy interface to manage their ticket sales and attendee lists. Attendees can easily purchase tickets and have eTickets delivered to their email.</p>
 
 <br>
 <h1>What problem does it solve?</h1>
 <br>
 
 <p>
-Secret Board allows non-signed-in users who visit the site to see a list of anonymous text-based posts. When a user logs-in, that user can see the same posts and their respective authors, as well as create a new post themselves. That new post will then be seen as anonymously authored to non-logged-in users.
+  Event managers need a way to manage their ticket sales both online and on location. Likewise, attendees need a way to easily purchase tickets.
+  <br>
+  <br>
+  <h4>Goals:</h4>
+  <br>
+  <ul>
+    <li>To allow event managers to list their event and available tickets</li>
+    <li>To allow event managers to maintain a list of attendees and ticket sales</li>
+    <li>To allow attendees to purchase a ticket to a particular event</li>
+    <li>To allow attendees to maintain a record of their ticket purchases</li>
+  </ul>
 </p>
 
 <br>
 <h1>What's inside?</h1>
 <br>
 <p>
-<strong>tl;dr</strong> As my first solo rails project, I practiced building a CRUD application without scaffolding, wireframing and MVP planning/management with <a href="http://www.trello.com" target="_blank">Trello</a>, Version control with Git and Github, TDD with <a href="http://rspec.info/" target="_blank">RSpec</a> and Capybara, integrating <a href="http://www.getbootstrap.com" target="_blank">Twitter's Bootstrap</a>, and manipulating client cookies and sessions.
+<strong>tl;dr</strong> Authentication and authorization is handled with devise, testing is done with capybara, RSpec, and factorygirl, styling and javascript is facilitated by Twitter Bootstrap, continuous integration and version control is managed by Semaphore and Git, user stories and issue tracking is delegated by waffle.io/github issues, and deployment is completed by Heroku.
 <hr>
 <br>
-This project was an obvious segue from <a href="https://www.railstutorial.org" target="_blank">Michael Hartl's Tutorial</a>, but I wanted to do this one on my own. What I had most trouble following in Hartl's book was his testing, which as of the Fourth Edition (Rails 5), uses Test::Unit, rather than RSpec, which I'm more familiar with. This led me to want to try my hand at writing my own tests with RSpec, rather than simply adapting his tests for my needs.
-<br><br>
-Thanks to <a href="http://www.justinweiss.com" target="_blank">Justin Weiss</a>’ free 7-Part Email Course, I felt like I could wrap my head around TDD/BDD. I knew about writing tests and had some practice with it, but true TDD was something I struggled with with Rails. With so many tests to write that cover so many things, where do you start? 
-
-<div class="img_row" style="height: 100%">
-	<img class="col three" src="/img/testing_pyramid.png">
-</div>
-<div class="col three caption">
-	Testing Pyramid from from Justin Weiss. 
-</div>
-
-This Pyramid, combined with the opening chapters of Sam Ruby's <a href="https://pragprog.com/book/rails5/agile-web-development-with-rails-5" target="_blank">Agile Web Development with Rails 5</a>, I felt like I had the tools I needed to feel confident.
-
-I started with sketches and user stories. Just me and a yellow pad, I sketched out what my UI would look like and some simple flow logic. 
-
-<div class="img_row" style="height: 100%">
-	<img class="col three" src="/img/secret_board_wireframe.jpg">
-</div>
-<div class="col three caption">
-	It's not pretty, but it focused me in on an achievable MVP 
-</div>
-
-As I'll find out later, I forgot one thing in the wireframe: The <code>login</code> link on the <code>Posts</code> page should change to <code>logout</code> when a user is logged in.
-<br>
-<br>
 <p>
-Next, I wrote some user stories:
-<ul>
-  <li>When I visit the site, I see a list of text-based posts with anonymous authors and a link to log in</li>
-  <li>When I click 'login', I see a form with two inputs for an email address and password, and a submit button</li>
-  <li>When I type invalid information and click 'submit', I see text explaining that there is an error</li>
-  <li>When I type valid information and click 'submit', I'm taken back to the homepage</li>
-  <li>On the homepage, I see text telling me that I'm logged in</li>
-  <li>When I refresh the page, the text is gone</li>
-  <li>On the homepage, I see the same text-based posts, this time with named authors and a link to logout</li>
-  <li>On the homepage, I also now see a link to create a new post</li>
-  <li>When I click 'create post' I see a form with one input to create the body of a post, and a submit button</li>
-  <li>When I leave the box blank and press submit, I see text explaining that there is an error</li>
-  <li>When I add text to the input and press submit, I'm taken back to the homepage</li>
-  <li>On the homepage, I see text telling me that the post has been created successfully</li>
-  <li>When I refresh the page, the text is gone</li>
-  <li>On the homepage, I see a new post which is authored by me</li>
-  <li>When I click 'logout', I'm still on the homepage</li>
-  <li>On the homepage, I still see the post I created but now authored by anonymous</li>
-</ul>
-</p>
-<br>
-With a wireframe in hand and a list of user stories, it was relatively simple to come up with some integration tests, which obviously failed to begin with.
-<br>
-<br>
-{% highlight ruby %}
-# secret_board/spec/features/post_index_spec.rb
 
-...
-  
-  context 'when user is anonymous' do
-  
-  ...
-  
-    it 'renders a list of posts'
-    it 'has a link to login' 
-    it 'does not render the name of the post author' 
-  end
-  
-  context 'when user is signed in' do
-  
-  ...
-    
-    it 'renders the name of the post author' 
-    it 'has a link to create a new post' 
-    it 'adds a new post'
-    it 'has a link to logout' 
-  end
-  
-  private
-  
-    def log_in_as(user)
-    ...
-    end
-    
-...
-
-# secret_board/spec/features/user_login_spec.rb
-...
-                           
-  context "with a user email that doesn't exist" do
-    it 'rerenders the form with an alert message' 
-  end
-  
-  context "with an incorrect password" do
-    it 'rerenders the form with an alert message' 
-  end
-  
-  context "with valid login information followed by logout" do
-    it 'rerenders the homepage with an alert message' 
-  end
-  
-...
-{% endhighlight %}
-<br>
-Led by these tests, I had to figure out what kind of controllers and models I would need, and then then begin to write tests for those too. I didn't complete the entire test suite before I began coding anything at all, but because I was familiar with the sessions-login pattern, thanks to Hartl's book, I was able to gently guide myself through the TDD process.
-<br>
-<br>
-Continuing through the process, I had my wireframe, user stories, and integration specs guiding me to a well-tested MVP. That last part is what was most important to me. It was tempting to add features here and there, but the development process stayed on track thanks to the groundwork that was laid before I even typed <code>$ rails new</code>.
 </p>
 
 <br>
@@ -151,22 +71,12 @@ Continuing through the process, I had my wireframe, user stories, and integratio
 <br>
 
 <p>
-This was a very powerful app for me to create. With complete test coverage, I can now implement numerous user features that one might expect from an app that solves this problem, namely:
-<ul>
-  <li>Account Creation/Deletion</li>
-  <li>"Remember me" on login</li>
-  <li>Edit<strike>/Delete</strike> posts 3.10.2017</li>
-  <li><strike>Styling and Responsiveness</strike> 3.10.2017</li>
-  <li>Moderation/Admin Accounts</li>
-</ul>
-
-This toy app is also exactly the kind of thing I'll use to test upgrading DIY-Auth to the standard auth solution, <a href="https://github.com/plataformatec/devise" target="_blank">Devise</a>, and plan on doing just that in this app's second iteration. 
+The aim of the app is to allow artist to charge for their tickets and to fully mimic the functionality of existing solutions, but provide a more minimal interface. I began this project because I'm an artist who was intimidated by the prevailing options, and I hope to quell that intimidation with my easy-to-use app!
 </p>
 
 <br>
 <h1>What did I learn?</h1>
 <br>
 <p>
-Well in case I haven't already covered everything, I began understanding some agile methodologies while reinforcing my understanding of RSpec and Capybara. Most obviously, I began to understand browser sessions, model validations, controller before-actions, and debugging.
-</p> 
-
+Peanuts is still a work-in-progress, and is my first solo app after getting some experience through open source contributions. The aim of this app is to keep things as clean and well-tested as possible to allow other contributors to feel excited about picking issues to tackle. This app is slow going, but I strive to feel proud of every commit.
+</p>

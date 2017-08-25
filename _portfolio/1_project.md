@@ -1,82 +1,60 @@
 ---
 layout: post
-title: Peanuts
-description: A minimal event ticket sales app.
-published: true
-img: /img/peanuts_home.png
+title: Clerk
+description: Shared-expense manager
+published: false
+img: /img/clerk.jpg
 ---
 <h1>
-<a href="https://peanuts-app.herokuapp.com" target="_blank">Deployed Here</a> | 
-<a href="https://github.com/Thomascountz/peanuts/" target="_blank">Github Repo</a> 
+<a href="https://github.com/Thomascountz/clerk/" target="_blank">Github Repo</a> 
 </h1>
 <br>
-<h1>Screenshots</h1>
-<div class="img_row" style="height: 100%">
-  <a href="/img/peanuts_home.png"><img class="col one" src="/img/peanuts_home.png"></a>
-  <a href="/img/peanuts_dashboard.png"><img class="col one" src="/img/peanuts_dashboard.png"></a>
-  <a href="/img/peanuts_events.png"><img class="col one" src="/img/peanuts_events.png"></a>
-</div>
-<br>
-<br>
-{% comment %}
-<h1>UPDATE</h1> 
-<br>
-<h1>Checkout the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> codebase here.</h1> 
-<br>
-<p> 
-Peanuts has been a very challenging project for me; from simple CRUD app to complex CRUD app was a large leap. So large, in fact, that it's only in hindsight that I see how my awkward and unchecked decision-making has led me to an ill fated and difficult to manage codebase.  
-<br> 
-<br>
-Brilliant! What an amazing new challenge that lies ahead! The coveted "inherited legacy code that must be refractored!" Though valid, my mind takes me to another challenge: scrap and rebuild. So this codebase is out, and the new <a href="https://github.com/Thomascountz/peanuts2/" target="_blank">Peanuts2</a> is in. Check it out! 
-</p>
-<br>
-<br>
-{% endcomment %}
 <h1>What is this?</h1>
 <br>
 <p>
-Peanuts is a Rails app that empowers event managers with an easy interface to manage their ticket sales and attendee lists. Attendees can easily purchase tickets and have eTickets delivered to their email.</p>
+Clerk is a work-in-progress rails 5 app.
+</p>
 
 <br>
 <h1>What problem does it solve?</h1>
 <br>
 
 <p>
-  Event managers need a way to manage their ticket sales both online and on location. Likewise, attendees need a way to easily purchase tickets.
-  <br>
-  <br>
-  <h4>Goals:</h4>
-  <br>
-  <ul>
-    <li>To allow event managers to list their event and available tickets</li>
-    <li>To allow event managers to maintain a list of attendees and ticket sales</li>
-    <li>To allow attendees to purchase a ticket to a particular event</li>
-    <li>To allow attendees to maintain a record of their ticket purchases</li>
-  </ul>
+Splitting bills is something my roommies and I have to do every month. We use a spreadsheet that we copypaste into an email. How barbaric! This app exists to provide us (and you!) with some UI features that other split-payment apps don't have. And with Clerk, we can keep track of the apartment expenses besides just the bills, i.e. the $88 worth of toilet paper I bought last week... #UOMe.
 </p>
 
 <br>
 <h1>What's inside?</h1>
 <br>
 <p>
-<strong>tl;dr</strong> Authentication and authorization is handled with devise, testing is done with capybara, RSpec, and factorygirl, styling and javascript is facilitated by Twitter Bootstrap, continuous integration and version control is managed by Semaphore and Git, user stories and issue tracking is delegated by waffle.io/github issues, and deployment is completed by Heroku.
-<hr>
+Rails 5, Postgresql 9.6, TDD with RSpec & Capybara.
 <br>
 <p>
 
 </p>
 
 <br>
-<h1>Where do we go from here?</h1>
+<h1>What's else?</h1>
 <br>
 
 <p>
-The aim of the app is to allow artist to charge for their tickets and to fully mimic the functionality of existing solutions, but provide a more minimal interface. I began this project because I'm an artist who was intimidated by the prevailing options, and I hope to quell that intimidation with my easy-to-use app!
+After suffering through excel spreadsheets with my roommates, I decided to tackle this problem with a Rails app. My focus from the beginning has been on developing a workflow that embodies the principals that I respect most in other developers. So, I begun with wireframing and user stories to help hone in on exactly how I wished to tackle this problem. How have other developers solved this problem? What did I like about their solution? What didn't I like? What features would I prioritize for an MVP? As the client, developer, and designer, how can I effectively communicate with myself when I'm wearing so many hats?
+<br>
+<div class="img_row" style="height: 100%">
+	<img class="col three" src="/img/clerk_userflow.svg">
+</div>
+<div class="col three caption">
+	Clerk MVP userflow wireframe 
+</div>
+<br>
+With cards in hand, moving on to TDD was an intuitive next step, and one that I praise highly. I love testing, I have an honest obsession, and by putting in extra effort towards planning and managing, I've found myself in a comfortable flow.
 </p>
 
 <br>
-<h1>What did I learn?</h1>
+<h1>What's next?</h1>
 <br>
+
 <p>
-Peanuts is still a work-in-progress, and is my first solo app after getting some experience through open source contributions. The aim of this app is to keep things as clean and well-tested as possible to allow other contributors to feel excited about picking issues to tackle. This app is slow going, but I strive to feel proud of every commit.
+The next steps are to get the MVP into the hands of users, (namely my roommates and I), as quickly as possible. That feedback will drive the next iteration, and finally I won't be the only one wearing a hat on this project.
 </p>
+
