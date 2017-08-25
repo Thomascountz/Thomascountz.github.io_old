@@ -2,7 +2,7 @@
 layout: post
 title: Clerk
 description: Shared-expense manager
-published: false
+published: true
 img: /img/clerk.jpg
 ---
 <h1>
