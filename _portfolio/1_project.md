@@ -41,7 +41,7 @@ Rails 5, Postgresql 9.6, TDD with RSpec & Capybara.
 After suffering through excel spreadsheets with my roommates, I decided to tackle this problem with a Rails app. My focus from the beginning has been on developing a workflow that embodies the principals that I respect most in other developers. So, I begun with wireframing and user stories to help hone in on exactly how I wished to tackle this problem. How have other developers solved this problem? What did I like about their solution? What didn't I like? What features would I prioritize for an MVP? As the client, developer, and designer, how can I effectively communicate with myself when I'm wearing so many hats?
 <br>
 <div class="img_row" style="height: 100%">
-	<img class="col three" src="/img/clerk_userflow.svg">
+	<img class="col three" src="/img/clerk_userflow.png">
 </div>
 <div class="col three caption">
 	Clerk MVP userflow wireframe 
