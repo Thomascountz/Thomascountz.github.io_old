@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/thomascountz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://thomascountz.github.io
+  * I am thomascountz (https://keybase.io/thomascountz) on keybase.
+  * I have a public key ASC8Ou3Vfx6fn6eZBfQaeqzDbC6ob2qkyJi9Qjxa6P7IPgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120bc3aedd57f1e9f9fa79905f41a7aacc36c2ea86f6aa4c898bd423c5ae8fec83e0a",
+      "host": "keybase.io",
+      "kid": "0120bc3aedd57f1e9f9fa79905f41a7aacc36c2ea86f6aa4c898bd423c5ae8fec83e0a",
+      "uid": "1a6fb5b4843cbd9327d8fd591e50eb19",
+      "username": "thomascountz"
+    },
+    "merkle_root": {
+      "ctime": 1542142394,
+      "hash": "8e885fa53ed35424c9e2cb373c09ad85f5aa94ecaa29d28282281af78009139a4565b86c73db1f1d1b9d781b97852f9ec5c2bdf12b916a53d60a3aafc11295a1",
+      "hash_meta": "1779e54c45b735475d97031a467dc0b503d2b7ab2f08d4f27be51992d6271912",
+      "seqno": 3947381
+    },
+    "service": {
+      "entropy": "JPDj1f1G8eJthIYn1lbfCWGE",
+      "hostname": "thomascountz.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.9.0"
+  },
+  "ctime": 1542142415,
+  "expire_in": 504576000,
+  "prev": "38feafb8e2d85bc030da81cc1c6617883be59adc32c64b5a62fd9449fc33e553",
+  "seqno": 19,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgvDrt1X8en5+nmQX0Gnqsw2wuqG9qpMiYvUI8Wuj+yD4Kp3BheWxvYWTESpcCE8QgOP6vuOLYW8Aw2oHMHGYXiDvlmtwyxktaYv2USfwz5VPEIEioFI7IKs42kbjvrbBn7Zr0HX3FhwbqNXossmdZ4hrSAgHCo3NpZ8RAWPykhf+srUd2q+XSGqC5s+u4LGRJuqx4yHyplQWH044oL+SxpYQX05qt9yG3gbeDjHIAxvUXENAZ1nLc5espBahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEILNkGD5kc+BKO3ttTyFKrDURnBO0KyJwvnVCDwoB4QwNo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/thomascountz
+
+==================================================================
